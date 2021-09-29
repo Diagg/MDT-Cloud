@@ -95,8 +95,8 @@ Write-Host "Temporary archive file set to ""$($TmpFile)""."
 Compress-Archive -Path "$FolderToAdd\*" -DestinationPath $TmpFile -force
 
 ##== Convert Archive to base 64
-$ArchiveContent = Get-Content -Path $TmpFile
-$Base64 = [System.Convert]::ToBase64String([Text.Encoding]::Ascii.GetBytes($ArchiveContent))
+$ArchiveContent = Get-Content -Path $TmpFile -AsByteStream
+$Base64 = [System.Convert]::ToBase64String($ArchiveContent)
 Remove-Item $TmpFile -Force
 
 ##== commit content to destination file
