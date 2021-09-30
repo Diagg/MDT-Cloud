@@ -407,7 +407,7 @@ $StringInsert = @"
 		<Condition><![CDATA[ Property("DeploymentType")<>"REPLACE" and Property("DeploymentType")<>"CUSTOM" and Property("DeploymentType") <> "StateRestore" and Property("DeploymentType")<> "UPGRADE" ]]> </Condition>
 		<Condition><![CDATA[ FindTaskSequenceStep("//step[@name='Download Image']", "ZTIPowerShell.wsf" )<>True  ]]> </Condition>
 	</Pane>
-    <!-- MDT-O-Matic: $($Item.GUID) -->
+	<!-- MDT-O-Matic: $($Item.GUID) -->
 
 			
 "@
@@ -451,7 +451,7 @@ $DataList.Add($Item)|Out-Null
 
 
 #################
-#### Gather.xml
+#### ZTIGather.xml
 #################
 
 $Item = New-Object PSObject
